@@ -1,38 +1,265 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: #ffebee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: #d32f2f;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 150px;
+}
+
+.yes-btn {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.no-btn {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+.date-form {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.radio-group {
+  margin: 1.5rem 0;
+}
+
+.radio-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.radio-options {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radio-options label {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-options input[type="radio"] {
+  margin-right: 0.5rem;
+  width: auto;
+}
+
+.submit-btn {
+  background-color: #2196f3;
   color: white;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.change-mind-btn {
+  background: none;
+  border: none;
+  color: #888;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tagalog {
+  color: #d32f2f;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtext {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url('https://media.giphy.com/media/eimP53J1QvPm2mQDYb/giphy.gif') center/cover;
+  opacity: 0.7;
+}
+
+.celebration {
+  position: relative;
+  overflow: hidden;
+}
+
+.confirmation-details {
+  text-align: left;
+  margin: 2rem 0;
+  background: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.confirmation-details p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+.confirmation-details span {
+  font-weight: bold;
+  color: #d32f2f;
+  display: inline-block;
+  width: 80px;
+}
+
+.done-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.shake {
+  animation: shake 0.5s linear;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  .tagalog {
+    font-size: 1.2rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    max-width: 100%;
+  }
+  
+  .confirmation-details span {
+    width: 70px;
+    font-size: 0.9rem;
+  }
+  
+  .confirmation-details p {
+    font-size: 1rem;
   }
 }
