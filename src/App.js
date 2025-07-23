@@ -46,7 +46,7 @@ function App() {
   const sendEmail = () => {
     const templateParams = {
       to_name: 'You',
-      from_name: 'Ronnete',
+      from_name: 'Ronette',
       date: dateDetails.date,
       time: dateDetails.time,
       location: dateDetails.location,
@@ -93,7 +93,7 @@ function App() {
   if (answer === null) {
     return (
       <div className="container">
-        <h1>Hi Ronnete, can we go out on our rest day? 💐</h1>
+        <h1>Hi Ronette, can we go out on our rest day? 💐</h1>
         <p>(Seriously though, click the right button...)</p>
         <div className="buttons">
           <button className="yes-btn" onClick={handleYesClick}>YES</button>
